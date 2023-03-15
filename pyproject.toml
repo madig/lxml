@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 # Skip 32 bit Linux builds, ppc64le and s390x
 skip = ["*_i686", "*_ppc64le", "*_s390x"]
 
-test-command = "python test.py"
+test-command = "python {project}/test.py"
 
 [tool.cibuildwheel.environment]
 STATIC_DEPS = true
