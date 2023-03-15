@@ -19,6 +19,11 @@ except ImportError:
 # make sure Cython finds include files in the project directory and not outside
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 
+# NOTE: When building with cibuildwheel or another tool, we need to give Python access
+# to the current working dir to import the following two modules. Can't just pop
+# it off afterwards, though...
+if "PEP517_BUILD_BACKEND" in os.environ:
+    sys.path.append(os.getcwd())
 import versioninfo
 import setupinfo
 

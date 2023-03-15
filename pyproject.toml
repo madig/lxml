@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools", "Cython>=0.29.7"]
+build-backend = "setuptools.build_meta"
+
+[tool.cibuildwheel]
+# Skip 32 bit Linux builds, ppc64le and s390x
+skip = ["*_i686", "*_ppc64le", "*_s390x"]
+
+test-command = "python test.py"
+
+[tool.cibuildwheel.environment]
+STATIC_DEPS = true
+
+[tool.cibuildwheel.macos]
+archs = ["x86_64", "universal2"]
+
+# [tool.cibuildwheel.macos.environment]
+# STATIC_DEPS = true
+# TARGET_MACOS_UNIVERSAL2 = true

@@ -78,4 +78,8 @@ def create_version_h():
 
 
 def get_base_dir():
+    # When building with cibuildwheel or another tool, getcwd gives the right
+    # answer.
+    if "PEP517_BUILD_BACKEND" in os.environ:
+        return os.getcwd()
     return os.path.abspath(os.path.dirname(sys.argv[0]))
