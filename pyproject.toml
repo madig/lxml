@@ -1,0 +1,44 @@
+[build-system]
+build-backend = "mesonpy"
+requires = [
+    "cython>=0.29.7",
+    "meson>=1",
+    "meson-python>=0.12",
+]
+
+[project]
+name = "lxml"
+version = "4.9.2"
+description = "Powerful and Pythonic XML processing library combining libxml2/libxslt with the ElementTree API."
+readme = "README.rst"
+requires-python = ">=3.6"
+classifiers = [
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Cython",
+    "Programming Language :: Python :: 2",
+    "Programming Language :: Python :: 2.7",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: C",
+    "Operating System :: OS Independent",
+    "Topic :: Text Processing :: Markup :: HTML",
+    "Topic :: Text Processing :: Markup :: XML",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[tool.cibuildwheel]
+# Skip 32 bit Linux builds, ppc64le and s390x
+skip = ["*_i686", "*_ppc64le", "*_s390x"]
+
+test-requires = "pytest"
+test-command = "pytest {project}/tests"
+
+[tool.cibuildwheel.macos]
+archs = ["x86_64", "universal2"]

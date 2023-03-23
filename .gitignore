@@ -35,3 +35,6 @@ src/lxml/lxml.etree_api.h
 src/lxml/objectify.c
 src/lxml/lxml.objectify.c
 src/lxml/sax.c
+
+subprojects/*/
+.mesonpy-native-file.ini

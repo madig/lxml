@@ -1,0 +1,15 @@
+[wrap-file]
+directory = libxslt-1.1.37
+source_url = https://download.gnome.org/sources/libxslt/1.1/libxslt-1.1.37.tar.xz
+source_fallback_url = https://github.com/mesonbuild/wrapdb/releases/download/libxslt_1.1.37-4/libxslt-1.1.37.tar.xz
+source_filename = libxslt-1.1.37.tar.xz
+source_hash = 3a4b27dc8027ccd6146725950336f1ec520928f320f144eb5fa7990ae6123ab4
+patch_filename = libxslt_1.1.37-4_patch.zip
+patch_url = https://wrapdb.mesonbuild.com/v2/libxslt_1.1.37-4/get_patch
+patch_hash = 6caf5ed6f54dee1b4ecfaafb73a05a50736a1922c47ab64cc8d33266f5c41f94
+wrapdb_version = 1.1.37-4
+
+[provide]
+libxslt = libxslt_dep
+libexslt = libexslt_dep
+program_names = xsltproc
