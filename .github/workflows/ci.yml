@@ -112,6 +112,19 @@ jobs:
           #- os: macos-latest
           #  allowed_failure: true   # Unicode parsing fails in Py3
 
+          - os: macos-latest
+            python-version: "3.8"
+            env: { BUILD_UNIVERSAL2: true }
+          - os: macos-latest
+            python-version: "3.9"
+            env: { BUILD_UNIVERSAL2: true }
+          - os: macos-latest
+            python-version: "3.10"
+            env: { BUILD_UNIVERSAL2: true }
+          - os: macos-latest
+            python-version: "3.11"
+            env: { BUILD_UNIVERSAL2: true }
+
         exclude:
           - os: ubuntu-latest
             python-version: "3.5"

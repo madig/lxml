@@ -151,6 +151,26 @@ jobs:
         include:
           - os: windows-2016
             python-version: 2.7
+
+          # Build universal2 wheels for Python 3.8+
+          - os: macos-latest
+            python-version: "3.8"
+            env: { BUILD_UNIVERSAL2: true }
+          - os: macos-latest
+            python-version: "3.9"
+            env: { BUILD_UNIVERSAL2: true }
+          - os: macos-latest
+            python-version: "3.10"
+            env: { BUILD_UNIVERSAL2: true }
+          - os: macos-latest
+            python-version: "3.11"
+            env: { BUILD_UNIVERSAL2: true }
+          - os: macos-latest
+            python-version: "pypy-3.8-v7.3.7"
+            env: { BUILD_UNIVERSAL2: true }
+          - os: macos-latest
+            python-version: "pypy-3.9-v7.3.9"
+            env: { BUILD_UNIVERSAL2: true }
         exclude:
           - os: windows-2019
             python-version: 2.7  # needs older image
