@@ -3,6 +3,8 @@ project(
     'c', 'cython',
     meson_version: '>= 1.0.0',
     default_options: [
+        # Don't know where the Python debug lib is in Windows, so link release
+        # object.
         'buildtype=release',
     ]
 )
